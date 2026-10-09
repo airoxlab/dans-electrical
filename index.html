@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Dan's Electrical Contracting — licensed C-10 electrician serving Irvine and Tustin. High-end residential lighting, home electrical projects, outdoor installations and commercial work. 24/7, free estimates. CSLB #1128326. Call (949) 701-0939.">
+<title>Dan's Electrical Contracting — Irvine</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --paper: #FCFAF6;
+    --paper-deep: #F3EFE6;
+    --char: #23201C;
+    --char-deep: #16140F;
+    --brass: #B07A2E;
+    --brass-soft: #C9933F;
+    --glow: #E8B04B;
+    --teal: #2C6E66;
+    --ink: #262320;
+    --ink-soft: #6B655C;
+    --line: #E2DCCF;
+    --card: #FFFFFF;
+    --img-bg: #EDE8DC;
+    --on-dark: #F7F3EA;
+    --on-accent: #FFFFFF;
+    --display: "Fraunces", Georgia, serif;
+    --body: "Karla", "Segoe UI", Arial, sans-serif;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #16150F;
+      --paper-deep: #100F0A;
+      --char: #F0EADC;
+      --char-deep: #FAF6EC;
+      --brass: #D9A355;
+      --brass-soft: #B07A2E;
+      --glow: #E8B04B;
+      --teal: #5FA89D;
+      --ink: #EDE8DC;
+      --ink-soft: #A39B8C;
+      --line: #2D2A22;
+      --card: #1D1B14;
+      --img-bg: #26241C;
+      --on-dark: #100F0A;
+      --on-accent: #16150F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #16150F;
+    --paper-deep: #100F0A;
+    --char: #F0EADC;
+    --char-deep: #FAF6EC;
+    --brass: #D9A355;
+    --brass-soft: #B07A2E;
+    --glow: #E8B04B;
+    --teal: #5FA89D;
+    --ink: #EDE8DC;
+    --ink-soft: #A39B8C;
+    --line: #2D2A22;
+    --card: #1D1B14;
+    --img-bg: #26241C;
+    --on-dark: #100F0A;
+    --on-accent: #16150F;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--body); font-size: 1.0625rem; line-height: 1.68;
+  }
+  a { color: var(--teal); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--brass); outline-offset: 3px; border-radius: 2px; }
+  img, svg { max-width: 100%; display: block; }
+
+  .wrap { max-width: 70rem; margin: 0 auto; padding: 0 1.25rem; }
+  .eyebrow {
+    font-weight: 700; font-size: 0.74rem; letter-spacing: 0.21em;
+    text-transform: uppercase; color: var(--brass); margin: 0 0 0.8rem;
+  }
+  h1, h2, h3 { font-family: var(--display); font-weight: 600; color: var(--char-deep); text-wrap: balance; margin: 0; letter-spacing: -0.015em; }
+  h2 { font-size: clamp(1.95rem, 4.6vw, 2.65rem); line-height: 1.12; }
+  h3 { font-size: 1.18rem; }
+  p { margin: 0; }
+  section { padding: 4.5rem 0; scroll-margin-top: 4.5rem; }
+  .section-intro { max-width: 44em; margin-top: 1rem; color: var(--ink-soft); }
+
+  /* Header */
+  .site-head {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
+  }
+  header.site { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.68rem 0; }
+  .brand { display: flex; align-items: center; gap: 0.62rem; text-decoration: none; }
+  .brand .txt { font-family: var(--display); font-weight: 600; font-size: 1.24rem; line-height: 1; color: var(--char-deep); letter-spacing: -0.02em; }
+  .brand .txt small { display: block; font-family: var(--body); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.22em; color: var(--brass); margin-top: 4px; text-transform: uppercase; }
+  nav.top { display: none; gap: 1.2rem; }
+  nav.top a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.93rem; }
+  nav.top a:hover { color: var(--brass); }
+  .call-btn {
+    display: inline-block; background: var(--char); color: var(--paper);
+    text-decoration: none; font-weight: 700; font-size: 0.91rem;
+    padding: 0.56rem 1.15rem; border-radius: 999px; white-space: nowrap;
+  }
+  .call-btn:hover { background: var(--brass); color: #FFFFFF; }
+  @media (min-width: 1000px) { nav.top { display: flex; } }
+  @media (max-width: 420px) { .brand .txt { font-size: 1.05rem; } }
+
+  /* Hero */
+  .hero { padding: 3.6rem 0 4rem; position: relative; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; inset: -35% -15% auto 42%; height: 100%;
+    background: radial-gradient(ellipse at center, color-mix(in srgb, var(--glow) 22%, transparent), transparent 65%);
+    pointer-events: none;
+  }
+  .hero-grid { display: grid; gap: 2.4rem; align-items: center; position: relative; }
+  @media (min-width: 880px) { .hero-grid { grid-template-columns: 1.04fr 1fr; gap: 3.2rem; } }
+  .pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.2rem; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 0.42rem;
+    background: var(--card); border: 1px solid var(--line); border-radius: 999px;
+    padding: 0.32rem 0.92rem; font-weight: 600; font-size: 0.83rem; color: var(--ink-soft);
+  }
+  .pill.day::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #2F9E5F; }
+  .hero h1 { font-size: clamp(2.2rem, 5.6vw, 3.2rem); line-height: 1.06; }
+  .hero h1 em { font-style: italic; color: var(--brass); }
+  .hero .lede { margin-top: 1.2rem; font-size: 1.14rem; max-width: 33em; color: var(--ink-soft); }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.85rem; }
+  .btn {
+    display: inline-block; text-decoration: none; font-family: var(--body);
+    font-weight: 700; font-size: 0.98rem; padding: 0.85rem 1.7rem; border-radius: 999px;
+  }
+  .btn-solid { background: var(--brass); color: #FFFFFF; }
+  .btn-solid:hover { background: var(--brass-soft); }
+  .btn-ghost { border: 2px solid var(--char); color: var(--char); }
+  .btn-ghost:hover { border-color: var(--brass); color: var(--brass); }
+  .hero-note { margin-top: 1.3rem; font-size: 0.92rem; color: var(--ink-soft); }
+  .hero-photo { margin: 0; border-radius: 0.9rem; overflow: hidden; border: 1px solid var(--line); background: var(--img-bg); }
+  .hero-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+  /* Strip */
+  .strip { background: var(--char-deep); padding: 2rem 0; }
+  .strip-grid { display: grid; gap: 1.35rem; grid-template-columns: repeat(2, 1fr); text-align: center; }
+  @media (min-width: 780px) { .strip-grid { grid-template-columns: repeat(4, 1fr); } }
+  .strip-grid .n { font-family: var(--display); font-weight: 600; font-size: clamp(1.25rem, 2.9vw, 1.7rem); color: var(--glow); line-height: 1.12; }
+  .strip-grid .l { margin-top: 0.3rem; font-size: 0.77rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--on-dark); opacity: 0.82; }
+  :root[data-theme="dark"] .strip { background: var(--card); }
+  :root[data-theme="dark"] .strip-grid .l { color: var(--ink); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .strip { background: var(--card); }
+    :root:not([data-theme="light"]) .strip-grid .l { color: var(--ink); }
+  }
+
+  /* Services */
+  .svc-grid { display: grid; gap: 1.2rem; margin-top: 2.5rem; }
+  @media (min-width: 640px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .svc-grid { grid-template-columns: repeat(3, 1fr); } }
+  .svc { background: var(--card); border: 1px solid var(--line); border-radius: 0.8rem; padding: 1.65rem 1.5rem; }
+  .svc.lead { border-color: var(--brass); box-shadow: 0 0 0 1px var(--brass) inset; }
+  .svc .ico { color: var(--brass); margin-bottom: 0.85rem; }
+  .svc h3 .tag { display: inline-block; margin-left: 0.5rem; font-family: var(--body); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF; background: var(--brass); padding: 0.16rem 0.5rem; border-radius: 999px; vertical-align: middle; }
+  .svc p { margin-top: 0.5rem; font-size: 0.94rem; color: var(--ink-soft); }
+
+  /* Quote band */
+  .quote-band {
+    margin-top: 2.1rem; background: var(--paper-deep); border: 1px solid var(--line);
+    border-radius: 0.8rem; padding: 1.75rem 1.8rem; display: grid; gap: 1rem; align-items: center;
+  }
+  @media (min-width: 760px) { .quote-band { grid-template-columns: 1fr auto; } }
+  .quote-band h3 { color: var(--char-deep); font-size: 1.24rem; }
+  .quote-band p { margin-top: 0.4rem; font-size: 0.96rem; color: var(--ink-soft); }
+
+  /* Story */
+  .story { background: var(--paper-deep); }
+  .story-grid { display: grid; gap: 2.2rem; align-items: center; }
+  @media (min-width: 860px) { .story-grid { grid-template-columns: 1fr 1fr; gap: 3rem; } }
+  .story p + p { margin-top: 1rem; }
+  .story .pull {
+    margin-top: 1.5rem; padding-left: 1.1rem; border-left: 3px solid var(--brass);
+    font-family: var(--display); font-size: 1.15rem; font-style: italic; color: var(--char-deep);
+  }
+  .story-photo { margin: 0; border-radius: 0.9rem; overflow: hidden; border: 1px solid var(--line); background: var(--img-bg); }
+  .story-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+  /* Process */
+  .steps { display: grid; gap: 1.2rem; margin-top: 2.4rem; }
+  @media (min-width: 760px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+  .step { background: var(--card); border: 1px solid var(--line); border-radius: 0.8rem; padding: 1.6rem 1.45rem; }
+  .step .n { font-family: var(--display); font-weight: 600; font-size: 1.55rem; color: var(--brass); line-height: 1; }
+  .step h3 { margin-top: 0.5rem; font-size: 1.06rem; }
+  .step p { margin-top: 0.45rem; font-size: 0.93rem; color: var(--ink-soft); }
+
+  /* Work */
+  .work { background: var(--paper-deep); }
+  .work-grid { display: grid; gap: 1rem; margin-top: 2.4rem; grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 820px) { .work-grid { grid-template-columns: repeat(4, 1fr); } }
+  .shot { margin: 0; border: 1px solid var(--line); border-radius: 0.7rem; overflow: hidden; background: var(--card); }
+  .shot img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--img-bg); }
+  .shot figcaption { padding: 0.72rem 0.95rem; font-size: 0.85rem; color: var(--ink-soft); font-weight: 500; }
+  .fine { margin-top: 1.3rem; font-size: 0.85rem; color: var(--ink-soft); }
+
+  /* Areas */
+  .area-grid { display: grid; gap: 0.8rem; margin-top: 2.2rem; grid-template-columns: repeat(2, 1fr); max-width: 32rem; }
+  .area {
+    background: var(--card); border: 1px solid var(--line); border-radius: 0.5rem;
+    padding: 0.95rem 0.8rem; text-align: center; font-family: var(--display);
+    font-weight: 600; font-size: 1.1rem; color: var(--char-deep);
+  }
+
+  /* Licensed */
+  .licensed { background: var(--paper-deep); }
+  .lic-wrap { display: grid; gap: 1.8rem; margin-top: 2.4rem; align-items: center; }
+  @media (min-width: 820px) { .lic-wrap { grid-template-columns: minmax(0, 300px) 1fr; gap: 2.7rem; } }
+  .lic-card { background: var(--card); border: 1px solid var(--line); border-top: 4px solid var(--brass); border-radius: 0.9rem; padding: 2rem 1.7rem; text-align: center; }
+  .lic-card .num { font-family: var(--display); font-weight: 600; font-size: 2rem; color: var(--brass); line-height: 1; font-variant-numeric: tabular-nums; }
+  .lic-card .lbl { margin-top: 0.45rem; font-weight: 600; font-size: 0.93rem; }
+  .lic-card .sub { margin-top: 0.4rem; font-size: 0.85rem; color: var(--ink-soft); }
+  .lic-card a { display: inline-block; margin-top: 0.85rem; font-size: 0.88rem; font-weight: 600; }
+  .checks { margin: 1.2rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.68rem; }
+  .checks li { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.97rem; }
+  .checks svg { flex: none; color: var(--brass); margin-top: 3px; }
+
+  /* Contact */
+  .contact-band { background: var(--char-deep); text-align: center; }
+  .contact-band .eyebrow { color: var(--glow); }
+  .contact-band h2 { color: var(--on-dark); }
+  .contact-band .section-intro { color: var(--on-dark); opacity: 0.87; margin-inline: auto; }
+  .contact-band .hero-ctas { justify-content: center; }
+  .contact-band .btn-solid { background: var(--brass); color: #FFFFFF; }
+  .contact-band .btn-solid:hover { background: var(--glow); color: var(--char-deep); }
+  .contact-band .btn-ghost { border-color: var(--on-dark); color: var(--on-dark); }
+  .contact-band .btn-ghost:hover { border-color: var(--glow); color: var(--glow); }
+  .contact-band .fine { margin-top: 1.5rem; color: var(--on-dark); opacity: 0.84; font-size: 0.92rem; }
+  :root[data-theme="dark"] .contact-band { background: var(--card); }
+  :root[data-theme="dark"] .contact-band h2,
+  :root[data-theme="dark"] .contact-band .section-intro,
+  :root[data-theme="dark"] .contact-band .fine { color: var(--ink); }
+  :root[data-theme="dark"] .contact-band .btn-ghost { border-color: var(--ink); color: var(--ink); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .contact-band { background: var(--card); }
+    :root:not([data-theme="light"]) .contact-band h2,
+    :root:not([data-theme="light"]) .contact-band .section-intro,
+    :root:not([data-theme="light"]) .contact-band .fine { color: var(--ink); }
+    :root:not([data-theme="light"]) .contact-band .btn-ghost { border-color: var(--ink); color: var(--ink); }
+  }
+
+  /* Footer */
+  footer.site {
+    background: var(--paper-deep); border-top: 1px solid var(--line);
+    color: var(--ink-soft); padding: 2.5rem 0; text-align: center; font-size: 0.9rem;
+  }
+  footer.site .fname { font-family: var(--display); font-weight: 600; font-size: 1.32rem; color: var(--char-deep); }
+  footer.site .tag { font-style: italic; color: var(--brass); margin-top: 0.15rem; }
+  footer.site p { margin-top: 0.3rem; }
+  footer.site a { color: inherit; }
+  footer.site .fineprint { font-size: 0.78rem; max-width: 52em; margin: 0.9rem auto 0; }
+</style>
+</head>
+<body>
+
+<div class="site-head">
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="#top" aria-label="Dan's Electrical Contracting home">
+        <svg width="30" height="34" viewBox="0 0 30 34" aria-hidden="true">
+          <path d="M15 2 C9.5 2 5.5 6 5.5 11.2 c0 3.5 1.8 5.6 3.3 7.4 1 1.2 1.7 2.1 1.7 3.4 h9 c0-1.3.7-2.2 1.7-3.4 1.5-1.8 3.3-3.9 3.3-7.4C24.5 6 20.5 2 15 2 z" fill="none" stroke="#B07A2E" stroke-width="2"/>
+          <path d="M10.5 25.5 h9 M11.5 29.5 h7" stroke="#B07A2E" stroke-width="2" stroke-linecap="round"/>
+          <path d="M15.6 7.5 L12 13.2 h3 l-.6 4.3 3.6-5.7 h-3 z" fill="#E8B04B"/>
+        </svg>
+        <span class="txt">Dan's Electrical<small>Contracting</small></span>
+      </a>
+      <nav class="top" aria-label="Sections">
+        <a href="#services">Services</a>
+        <a href="#about">About Dan</a>
+        <a href="#process">How it works</a>
+        <a href="#work">Our work</a>
+        <a href="#licensed">Licensed</a>
+        <a href="#contact">Free estimate</a>
+      </nav>
+      <a class="call-btn" href="tel:+19497010939">Call (949) 701-0939</a>
+    </header>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="pills">
+          <span class="pill day">Available 24/7</span>
+          <span class="pill">Free estimates</span>
+          <span class="pill">Irvine &amp; Tustin</span>
+        </div>
+        <h1>Brightening <em>your world.</em></h1>
+        <p class="lede">Dan's Electrical Contracting is a licensed C-10 electrician in Irvine, specialising in high-end residential lighting — plus home electrical projects, outdoor installations and commercial work.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-solid" href="tel:+19497010939">Get a free estimate</a>
+          <a class="btn btn-ghost" href="#services">What we do</a>
+        </div>
+        <p class="hero-note">CSLB #1128326 &middot; licensed &amp; bonded &middot; 13 years in the trade</p>
+      </div>
+      <figure class="hero-photo">
+        <img src="img/exterior-dusk.jpg" alt="Modern home lit at dusk, windows and landscape lighting glowing">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 2. STRIP ============ -->
+  <div class="strip">
+    <div class="wrap strip-grid">
+      <div><div class="n">13 years</div><div class="l">In the trade</div></div>
+      <div><div class="n">24/7</div><div class="l">Available</div></div>
+      <div><div class="n">Free</div><div class="l">Estimates</div></div>
+      <div><div class="n">#1128326</div><div class="l">CSLB C-10 licensed</div></div>
+    </div>
+  </div>
+
+  <!-- ============ 3. SERVICES ============ -->
+  <section id="services">
+    <div class="wrap">
+      <p class="eyebrow">What we do</p>
+      <h2>Lighting that makes a house look designed.</h2>
+      <p class="section-intro">Expert electrical contracting for residential and commercial needs — with a particular eye for the lighting that changes how a room feels.</p>
+      <div class="svc-grid">
+        <div class="svc lead">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5A6.5 6.5 0 0 0 5.5 9c0 2.4 1.3 3.9 2.3 5.1.7.9 1.2 1.5 1.2 2.4h6c0-.9.5-1.5 1.2-2.4 1-1.2 2.3-2.7 2.3-5.1A6.5 6.5 0 0 0 12 2.5z"/><path d="M9.5 20h5M10.5 22.5h3"/></svg></div>
+          <h3>High-end residential lighting<span class="tag">Specialty</span></h3>
+          <p>Recessed and layered lighting, feature fixtures, dimming and scene control — designed around the room rather than just wired into it.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8.5l7-5 7 5V21"/><path d="M10 21v-6h4v6"/></svg></div>
+          <h3>Home electrical projects</h3>
+          <p>Remodels, additions, new circuits and panel work — planned with the rest of the build rather than squeezed in at the end.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.4"/></svg></div>
+          <h3>Outdoor installations</h3>
+          <p>Landscape and path lighting, patios, exterior outlets and fixtures — rated for outside and wired to last out there.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V6h6v15M13 21V10h6v11"/><path d="M7.5 9.5h1M7.5 13h1M15.5 13.5h1M15.5 17h1"/></svg></div>
+          <h3>Commercial electrical</h3>
+          <p>Offices, retail and tenant improvements — scheduled around your trading hours where it can be.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></div>
+          <h3>Repairs &amp; maintenance</h3>
+          <p>Dead outlets, tripping breakers, flickering circuits and the faults that need finding before they get worse.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg></div>
+          <h3>24/7 availability</h3>
+          <p>Electrical problems do not keep business hours. Call when it happens, not the next working morning.</p>
+        </div>
+      </div>
+      <div class="quote-band">
+        <div>
+          <h3>Estimates are free.</h3>
+          <p>Tell us what you are planning, or what has stopped working, and you will get a price before anything is agreed.</p>
+        </div>
+        <div><a class="btn btn-solid" href="tel:+19497010939">Call (949) 701-0939</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. ABOUT ============ -->
+  <section id="about" class="story">
+    <div class="wrap story-grid">
+      <div>
+        <p class="eyebrow">About Dan</p>
+        <h2>Thirteen years in, five on his own.</h2>
+        <p style="margin-top:1.1rem">Dan started as an electrical apprentice and has spent thirteen years in the trade — the last five running his own business in Irvine.</p>
+        <p>The business began as a handyman and electrical outfit, and grew into something more specialised. Getting the C-10 contractor's licence was the formal step; the work had already moved toward the high-end residential lighting and larger home projects that make up most of it today.</p>
+        <p>It is still owner-operated. The person who quotes your job is the person who does it, and the person whose licence is on it.</p>
+        <p class="pull">&ldquo;Brightening your world.&rdquo;</p>
+      </div>
+      <figure class="story-photo">
+        <img src="img/working.jpg" alt="Electrician at work on a wall box" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 5. PROCESS ============ -->
+  <section id="process">
+    <div class="wrap">
+      <p class="eyebrow">How it works</p>
+      <h2>Priced before it is started.</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="n">01</div>
+          <h3>Call, any hour</h3>
+          <p>Describe the project or the fault. Available 24/7, so an emergency does not have to wait for Monday.</p>
+        </div>
+        <div class="step">
+          <div class="n">02</div>
+          <h3>Free estimate</h3>
+          <p>We look at the real job — the panel, the run, the ceiling — and give you a price. The estimate costs nothing.</p>
+        </div>
+        <div class="step">
+          <div class="n">03</div>
+          <h3>Done to code</h3>
+          <p>Carried out to current code, permitted and inspected where the job requires it, and tested before we leave.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. WORK ============ -->
+  <section id="work" class="work">
+    <div class="wrap">
+      <p class="eyebrow">The work</p>
+      <h2>Rooms, and the light in them.</h2>
+      <div class="work-grid">
+        <figure class="shot">
+          <img src="img/exterior-dusk.jpg" alt="Home exterior lit at dusk" loading="lazy">
+          <figcaption>Outdoor &amp; landscape lighting</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/kitchen.jpg" alt="Kitchen with pendant lighting over an island" loading="lazy">
+          <figcaption>Kitchen &amp; pendant lighting</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/modern-interior.jpg" alt="Modern open-plan interior" loading="lazy">
+          <figcaption>Whole-home projects</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/pendant-light.jpg" alt="Light fixture in a bright room" loading="lazy">
+          <figcaption>Feature fixtures</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/livingroom.jpg" alt="Living room with layered lighting" loading="lazy">
+          <figcaption>Living spaces</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/electrician.jpg" alt="Electrician on site" loading="lazy">
+          <figcaption>Service calls</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/working.jpg" alt="Electrical repair work in progress" loading="lazy">
+          <figcaption>Repairs &amp; diagnosis</figcaption>
+        </figure>
+      </div>
+      <p class="fine">These photographs illustrate the type of work offered. Dan's own job photos will replace them &mdash; the lighting work in particular is worth showing.</p>
+    </div>
+  </section>
+
+  <!-- ============ 7. AREAS + LICENSED ============ -->
+  <section id="licensed" class="licensed">
+    <div class="wrap">
+      <p class="eyebrow">Where we work</p>
+      <h2>Irvine and Tustin.</h2>
+      <div class="area-grid">
+        <div class="area">Irvine</div>
+        <div class="area">Tustin</div>
+      </div>
+      <p class="fine">Elsewhere in Orange County? Call and ask.</p>
+
+      <div style="margin-top:3.2rem">
+        <p class="eyebrow">Licensed &amp; bonded</p>
+        <h2>Check the licence before you let anyone near your panel.</h2>
+        <div class="lic-wrap">
+          <div class="lic-card">
+            <div class="num">1128326</div>
+            <div class="lbl">CSLB licence number</div>
+            <div class="sub">C-10 &mdash; Electrical<br>Active &middot; $25,000 bond</div>
+            <a href="https://www.cslb.ca.gov/onlineservices/checklicenseII/checklicense.aspx" rel="noopener">Verify at cslb.ca.gov &rarr;</a>
+          </div>
+          <div>
+            <p>California requires a contractor's licence for any electrical job over $500 in labour and materials. Unlicensed electrical work is the kind that fails an inspection, voids a home insurance claim, or quietly sits in a wall until something burns.</p>
+            <ul class="checks">
+              <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Active C-10 licence</strong> — the classification specific to electrical work, held since 2024.</span></li>
+              <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>$25,000 contractor's bond</strong> with American Contractors Indemnity, on file with the state.</span></li>
+              <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Owner-operated</strong> — the person who holds the licence is the person doing the work.</span></li>
+              <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>13 years in the trade</strong>, from apprentice to licensed contractor.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8. CONTACT ============ -->
+  <section id="contact" class="contact-band">
+    <div class="wrap">
+      <p class="eyebrow">Free estimates &middot; available 24/7</p>
+      <h2>Let's talk about the job.</h2>
+      <p class="section-intro">A lighting project you have been planning, or a fault that needs sorting tonight — either way, call.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-solid" href="tel:+19497010939">Call (949) 701-0939</a>
+        <a class="btn btn-ghost" href="mailto:danielgrosfeld1985@yahoo.com">Email Dan</a>
+      </div>
+      <p class="fine">Irvine &amp; Tustin &middot; CSLB #1128326 &middot; licensed &amp; bonded</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p class="fname">Dan's Electrical Contracting</p>
+    <p class="tag">Brightening your world.</p>
+    <p>Licensed C-10 electrical contractor &middot; Irvine, California</p>
+    <p><a href="tel:+19497010939">(949) 701-0939</a> &middot; <a href="mailto:danielgrosfeld1985@yahoo.com">danielgrosfeld1985@yahoo.com</a></p>
+    <p>California CSLB licence #1128326 &middot; bonded &middot; Irvine &amp; Tustin</p>
+    <p class="fineprint">Licence number, classification and bond status are public record with the California Contractors State License Board and can be verified at cslb.ca.gov. Photographs on this page illustrate the type of work offered rather than specific completed jobs.</p>
+  </div>
+</footer>
+
+</body>
+</html>
